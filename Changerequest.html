@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            Change Request page
+        </title>
+        <style>
+            tr, td {
+                height: 50px;
+                width: 100px;
+                text-align: center;
+                border-collapse: collapse;
+                border-style: solid;
+                border-width: thin;
+                
+                
+            }
+        </style>
+    </head>
+    <body>  
+        <table>
+            <th colspan="3"> Change request Listing</th>
+            <tr>
+                <td><h4>Product</h4></td>
+                <td><h4>Modules</h4></td>
+                <td><h4>Changes needed</h4></td>
+                {% for data in datas %}
+                    <tr>
+                        <td>{{ data[0] }}</td>
+                        <td>{{ data[1] }}</td>
+                        <td>{{ data[2] }}</td>
+                    </tr>
+                {% endfor %}
+                <tr> <th colspan="2"> <button type="button"> <a href="{{ url_for('addchangerequest', id=id) }}"> Add </a> </button></th>
+                    <th colspan="1"><button type="button"> <a href="{{ url_for('login') }}">Logout</a> </button> </th></tr>
+            </tr>
+        </table>
+
+
+    </body>
+
+</html>
