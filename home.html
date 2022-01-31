@@ -5,7 +5,7 @@
         </title>
     </head>
 
-    <body>
+    <body><center>
         <h4>
             {% with message = get_flashed_messages() %}
                 {% if message %}
@@ -15,6 +15,7 @@
                 {% endif %}
             {% endwith %}
         </h4>
+        
         <table style="height: 25%;">
             <form method="post" action="">
             <th colspan="2"> <h3> Login Page </h3> </th>
@@ -28,6 +29,6 @@
         
         
         
-        
+    </center>    
     </body>
 </html>

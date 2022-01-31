@@ -15,31 +15,29 @@
     </head>
     <body><center>
         
-    <form method="post" action="">
+    <form method="post" action="{{ url_for('changerequest',id=id) }}">
         <table>
             <th colspan="2"> Change Request details</th>
             <tr>
                 <td> Projects </td>
-                <td> <select name="getproject">
+                <td> <select name="getproject" onchange="sendprjct(this.value)">
                     {% for val in project %}
                         <option value="{{ val.pr_id }}"> {{ val.pr_name }} </option>
                     {% endfor %}
                 </select></td>
             </tr>
-            <tr> <td colspan="2"> <button type="submit" name="button1"> Click here, after you select the project </button> </td></tr>
+            <tr> <td colspan="2"> <button type="button" name="button1"> <a href="{{ url_for('addchangerequest', id=id) }}"> Click here to go back and select the project </a> </button> </td></tr>
             <tr>
                 <td> Module </td>
                 <td> <select name="module">
-                    {% if mod %}
                     {% for val in mod %}
                         <option value="{{ val.mo_id }}"> {{ val.mo_name }} </option>
                     {% endfor %}
-                    {% endif %}
                 </select></td>
             </tr>
             <tr>
                 <td> Change Description </td>
-                <td> <textarea name="desc" rows="5" cols="30"></textarea> </td>
+                <td> <textarea name="desc" rows="5" cols="30"></textarea></td>
             </tr>
             <tr>
                 <td> <button type="submit" name="button1"> Add </button></td>
